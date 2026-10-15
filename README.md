@@ -1,36 +1,40 @@
 # oss-pr-helper
 
-给开源框架提 PR 的助手 skill。只输出代码和指令，不自动修改任何文件。
+An agent skill that helps you prepare pull requests for open-source projects. It writes the code and instructions you need — but never touches a single file on its own.
 
 [![skills.sh](https://skills.sh/b/koa-wang/oss-pr-helper)](https://skills.sh/koa-wang/oss-pr-helper)
 
-## 安装
+## What it does
 
-使用 open skills CLI：
+Give it a target repo (and an issue if you have one), and it hands you a complete, copy-paste-ready PR kit:
+
+- a branch name
+- a conventional commit message
+- the exact file changes, marked up as a `+/-` diff
+- a ready-to-paste PR title and description
+
+It's deliberately read-only: no branch juggling, no commits, no surprise edits. You stay in control and run everything yourself.
+
+## Install
+
+Via the open skills CLI:
 
 ```bash
 npx skills add koa-wang/oss-pr-helper
 ```
 
-或直接安装单个 skill 文件：
+Or drop the skill file straight into your skills directory:
 
 ```bash
 mkdir -p ~/.agents/skills/oss-pr-helper
 cp skills/oss-pr-helper/SKILL.md ~/.agents/skills/oss-pr-helper/SKILL.md
 ```
 
-## 触发词
+## When it kicks in
 
-提 PR、pull request、给开源项目贡献代码、准备 PR 内容
+It triggers on phrases like "提 PR", "pull request", "给开源项目贡献代码", or "prepare a PR".
 
-## 输出内容
-
-- 分支名
-- commit message
-- 具体文件修改（+/- diff）
-- PR 标题和描述
-
-## 目录结构
+## Repo layout
 
 ```
 oss-pr-helper/
